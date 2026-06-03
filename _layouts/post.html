@@ -1,0 +1,58 @@
+{% include head.html %}
+
+<div style="padding-top:64px;">
+  <div class="post-header">
+    <div class="container">
+      <nav class="breadcrumb" style="justify-content:center;">
+        <a href="{{ '/' | relative_url }}">TOP</a>
+        <span>›</span>
+        <a href="{{ '/blog/' | relative_url }}">ブログ</a>
+        <span>›</span>
+        <span>{{ page.title }}</span>
+      </nav>
+      <span class="post-cat">{{ page.category }}</span>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">{{ page.date | date: "%Y年%m月%d日" }} · 代表 ヤマモト</p>
+    </div>
+  </div>
+
+  <div class="post-body">
+    {% if page.toc %}
+    <div class="toc">
+      <p class="toc-title">📋 目次</p>
+      {{ page.toc }}
+    </div>
+    {% endif %}
+
+    {{ content }}
+
+    <!-- 著者情報 -->
+    <div class="author-box">
+      <div class="author-avatar">Y</div>
+      <div>
+        <p class="author-name">ヤマモト</p>
+        <p class="author-title">元・運転代行Speed経営者 / 運転代行の集客屋 代表</p>
+        <p class="author-desc">宮崎市で運転代行「Speed」を個人創業。1台・2名運営で月利益45万円を達成。現在は全国の運転代行業者向けに集客改善支援を提供。</p>
+      </div>
+    </div>
+
+    <!-- 関連記事 -->
+    <div style="margin-top:48px;">
+      <p style="font-size:13px; color:var(--gold); letter-spacing:0.15em; margin-bottom:20px; opacity:0.8;">関連記事</p>
+      <div class="blog-grid">
+        {% for post in site.posts limit:3 %}
+          {% if post.url != page.url %}
+          <a href="{{ post.url | relative_url }}" class="blog-card">
+            <p class="blog-card-cat">{{ post.category }}</p>
+            <p class="blog-card-title">{{ post.title }}</p>
+            <p class="blog-card-date">{{ post.date | date: "%Y年%m月%d日" }}</p>
+            <span class="blog-card-link">続きを読む →</span>
+          </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}

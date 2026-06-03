@@ -1,0 +1,44 @@
+---
+layout: default
+title: ブログ
+description: 運転代行の集客改善に関する情報を発信しています。
+---
+
+<div style="padding-top:64px;">
+  <section style="background:var(--bg2); padding:80px 24px 60px; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <span class="eyebrow">BLOG</span>
+      <h1 class="sec-title">運転代行の集客改善<br>ブログ</h1>
+      <p class="sec-desc" style="margin-bottom:0;">待機依存から抜け出すための集客ノウハウを、現場経験をもとに発信しています。</p>
+    </div>
+  </section>
+
+  <section style="padding:60px 24px;">
+    <div class="container">
+
+      <!-- カテゴリフィルター -->
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px;">
+        <a href="{{ '/blog/' | relative_url }}" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border-gold); color:var(--gold); transition:all 0.2s;" onmouseover="this.style.background='rgba(200,169,107,0.1)'" onmouseout="this.style.background='transparent'">すべて</a>
+        <a href="#" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); color:var(--sub); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(200,169,107,0.2)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.color='var(--sub)'">集客</a>
+        <a href="#" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); color:var(--sub); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(200,169,107,0.2)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.color='var(--sub)'">Google検索</a>
+        <a href="#" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); color:var(--sub); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(200,169,107,0.2)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.color='var(--sub)'">MEO</a>
+        <a href="#" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); color:var(--sub); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(200,169,107,0.2)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.color='var(--sub)'">LINE活用</a>
+        <a href="#" style="font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); color:var(--sub); transition:all 0.2s;" onmouseover="this.style.borderColor='rgba(200,169,107,0.2)'; this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.color='var(--sub)'">運転代行経営</a>
+      </div>
+
+      <!-- 記事一覧 -->
+      <div class="blog-grid">
+        {% for post in site.posts %}
+        <a href="{{ post.url | relative_url }}" class="blog-card reveal">
+          <p class="blog-card-cat">{{ post.category }}</p>
+          <p class="blog-card-title">{{ post.title }}</p>
+          <p style="font-size:13px; color:var(--sub); opacity:0.7; line-height:1.7; margin-top:8px; flex:1;">{{ post.description | truncate: 80 }}</p>
+          <p class="blog-card-date" style="margin-top:12px;">{{ post.date | date: "%Y年%m月%d日" }}</p>
+          <span class="blog-card-link">続きを読む →</span>
+        </a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+</div>

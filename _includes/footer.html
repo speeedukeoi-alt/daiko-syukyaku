@@ -1,0 +1,48 @@
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <span class="eyebrow">無料診断受付中</span>
+    <h2>現在の集客状況を<br>無料で診断しています。</h2>
+    <p>「今の営業で本当に大丈夫か？」<br>同業経験者として、売り込みなしで改善提案します。</p>
+    <a href="【★LINEのURLを入れる★】" class="btn-line">LINEで無料診断を受ける</a>
+    <div><span class="cta-note">🤝 営業・押し売りは行いません</span></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo">運転代行の集客屋</span>
+      <p>地方運転代行向け集客改善支援。待機依存から"呼ばれる代行"へ。元・運転代行経営者が現場目線で支援します。</p>
+    </div>
+    <div class="footer-links">
+      <h4>サービス</h4>
+      <a href="{{ '/' | relative_url }}">集客改善支援</a>
+      <a href="{{ '/#pricing' | relative_url }}">料金</a>
+      <a href="{{ '/profile/' | relative_url }}">代表プロフィール</a>
+    </div>
+    <div class="footer-links">
+      <h4>コンテンツ</h4>
+      <a href="{{ '/blog/' | relative_url }}">ブログ一覧</a>
+      <a href="{{ '/contact/' | relative_url }}">LINE無料診断</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 運転代行の集客屋. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
