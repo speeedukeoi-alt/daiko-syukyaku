@@ -1,19 +1,22 @@
 title: 運転代行の集客屋
 description: 地方運転代行向け集客改善支援。待機依存から"呼ばれる代行"へ。
 url: "https://speeedukeoi-alt.github.io"
-baseurl: "/b2b-system"
+baseurl: "/daiko-syukyaku"
 lang: ja
 
 author:
   name: ヤマモト
   description: 元・運転代行Speed経営者
 
+permalink: /blog/:year/:month/:title/
+
+markdown: kramdown
+highlighter: rouge
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-
-permalink: /blog/:year/:month/:title/
 
 defaults:
   - scope:
@@ -23,10 +26,9 @@ defaults:
       layout: "post"
       author: "ヤマモト"
 
-markdown: kramdown
-highlighter: rouge
-
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - vendor
+  - .bundle
